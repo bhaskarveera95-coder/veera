@@ -7,6 +7,63 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="styles.css">
 <script>try{var t=localStorage.getItem("vt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+/* QS credential: badge, certificate and plain buttons (uses the site's theme tokens) */
+.credential {
+  display: grid; grid-template-columns: 150px minmax(0, 1fr) 150px; gap: 24px 36px; align-items: center;
+  padding: 30px 34px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface);
+}
+.credential > * { min-width: 0; }
+.cred-badge { display: block; width: 150px; max-width: 100%; height: auto; }
+.cred-kicker {
+  font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 10px;
+}
+.credential h2 { margin: 0 0 4px; font-size: 1.6rem; }
+.cred-sub { font-family: var(--font-display); font-size: .95rem; color: var(--accent); font-weight: 600; margin: 0 0 14px; }
+.credential p.cred-body { margin: 0 0 16px; font-size: 1rem; }
+.cred-stats { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.cred-stats li { display: grid; }
+.cred-stats b {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; line-height: 1.15;
+  color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.cred-stats span { font-family: var(--font-display); font-size: .78rem; color: var(--muted); }
+.cred-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cred-btn {
+  display: inline-block; padding: 9px 16px; border-radius: 8px; cursor: pointer; text-decoration: none;
+  font-family: var(--font-display); font-size: .86rem; font-weight: 600; line-height: 1.2;
+  border: 1px solid var(--border); background: var(--bg); color: var(--ink);
+}
+.cred-btn:hover { border-color: var(--ink); text-decoration: none; }
+.cred-btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.cred-btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+.cred-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin: 14px 0 0; }
+.cert-thumb { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; justify-self: end; }
+.cert-thumb img {
+  display: block; width: 150px; max-width: 100%; height: auto; border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.cert-thumb:hover img { border-color: var(--ink); }
+.cert-dialog {
+  width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--bg); color: var(--ink);
+}
+.cert-dialog::backdrop { background: rgba(14, 18, 32, .6); }
+.cert-dialog-in { display: grid; gap: 12px; padding: 16px; }
+.cert-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.cert-dialog-head p { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: .92rem; }
+.cert-dialog img { display: block; width: 100%; height: auto; max-height: calc(100vh - 150px); object-fit: contain; }
+@media (max-width: 860px) {
+  .credential { grid-template-columns: 120px minmax(0, 1fr); }
+  .cred-badge { width: 120px; }
+  .cert-thumb { display: none; }
+}
+@media (max-width: 560px) {
+  .credential { grid-template-columns: minmax(0, 1fr); padding: 24px 20px; }
+  .cred-badge { width: 110px; }
+}
+</style>
 </head>
 <body>
 <header class="top">
@@ -24,8 +81,57 @@
 <header class="page-head">
   <h1>AI in Examinations</h1>
   <p class="lede">Examinations run on tight deadlines and zero tolerance for error. Instead of relying solely on
-  the legacy ERP or asking for more people and budget, also deployed agentic AI to remove the bottlenecks directly.</p>
+  the legacy ERP or asking for more people and budget, she deployed agentic AI to remove the bottlenecks directly.</p>
 </header>
+
+<section class="credential" aria-labelledby="cred-title">
+  <img class="cred-badge" src="/qs-2026-badge.png" width="150" height="173"
+       alt="QS Reimagine Education Awards 2026 badge: Vector Polaris, MIT World Peace University, Shortlisted, AI Innovation in Education">
+  <div>
+    <p class="cred-kicker">QS Reimagine Education Awards &amp; Conference 2026 &middot</p>
+    <h2 id="cred-title">Shortlisted: Vector Polaris</h2>
+    <p class="cred-sub">AI Innovation in Education &middot; MIT World Peace University</p>
+    <p class="cred-body">Selected among the top applications from 2,226 submissions worldwide for innovation, impact and
+    scalability, after four rounds of evaluation by an international panel of higher-education and edtech experts.</p>
+    <ul class="cred-stats">
+      <li><b>2,226</b><span>submissions</span></li>
+      <li><b>4</b><span>evaluation rounds</span></li>
+      <li><b>1,634</b><span>expert evaluators</span></li>
+    </ul>
+    <div class="cred-actions">
+      <a class="cred-btn primary" href="https://www.credential.net/5abb5b8d-9291-4022-9406-ef1fc9f77c1b" target="_blank" rel="noopener">Verify credential</a>
+      <button type="button" class="cred-btn" id="certOpen" aria-haspopup="dialog" aria-controls="certDialog">View certificate</button>
+    </div>
+    <p class="cred-meta">Issued 18 Sep 2026 by QS Quacquarelli Symonds &middot; Does not expire</p>
+  </div>
+  <button type="button" class="cert-thumb" id="certThumb" aria-label="View certificate">
+    <img src="/qs-2026-certificate.jpg" width="150" height="212" alt="">
+  </button>
+</section>
+
+<dialog class="cert-dialog" id="certDialog" aria-labelledby="certDialogTitle">
+  <div class="cert-dialog-in">
+    <div class="cert-dialog-head">
+      <p id="certDialogTitle">Shortlisted project certificate &middot; QS Reimagine Education 2026</p>
+      <button type="button" class="cred-btn" id="certClose">Close</button>
+    </div>
+    <img src="images/qs-2026-certificate.jpg" width="950" height="1345"
+         alt="QS Reimagine Education Awards &amp; Conference 2026 shortlisted project certificate for Vector Polaris, AI Innovation in Education, MIT World Peace University">
+  </div>
+</dialog>
+<script>
+(function () {
+  var d = document.getElementById("certDialog");
+  var openers = [document.getElementById("certOpen"), document.getElementById("certThumb")];
+  if (!d || typeof d.showModal !== "function") {
+    openers.forEach(function (o) { if (o) o.addEventListener("click", function () { window.location.href = "images/qs-2026-certificate.jpg"; }); });
+    return;
+  }
+  openers.forEach(function (o) { if (o) o.addEventListener("click", function () { d.showModal(); }); });
+  document.getElementById("certClose").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+})();
+</script>
 
 <section>
   <h2>The approach</h2>
@@ -51,14 +157,14 @@
   <div>
     <h2>Recognition</h2>
     <ul class="ticks">
-      <li><b>QS Reimagine Education Awards 2026</b>, nominee, AI in Education category (London), for the work at MIT-WPU.</li>
+      <li><b>QS Reimagine Education Awards 2026</b>, shortlisted in the AI Innovation in Education category for <b>Vector Polaris</b> (MIT-WPU), selected from 2,226 submissions.</li>
       <li><b>QS Reimagine Education Awards 2025</b>, nominee, AI in Education category, for the work at Karnavati University.</li>
       <li><b>Registered design 480212-001</b>: a Generative-AI enabled device for processing education-related information (2025).</li>
     </ul>
   </div>
   <aside class="note">
     <h3>Earlier: Karnavati University</h3>
-    <p>As Controller of Examinations (2024&ndash;25)  authored the university's <b>Examination Manual</b> and
+    <p>As Controller of Examinations (2024&ndash;25) she authored the university's <b>Examination Manual</b> and
     <b>Convocation SOP</b>. Both are still followed today.</p>
   </aside>
 </section>
